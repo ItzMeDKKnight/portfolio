@@ -64,10 +64,9 @@
       "I care about the whole journey: clean interfaces up front, reliable systems behind them, and code that stays easy to grow. Right now I'm sharpening Java, DSA, system design and DevOps."
     ],
     githubUrl: "https://github.com/ItzMeDKKnight",
-    // Placeholder contact details — replace with your own.
     contact: {
       email: "anshoistcsea@gmail.com",
-      website: "www.reallygreatsite.com",
+      website: "itzanshwtf.vercel.app",
       closingNote: "Stay curious, continue learning, and keep building meaningful, secure, and impactful digital solutions for the modern web."
     }
   };
