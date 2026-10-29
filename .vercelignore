@@ -1,0 +1,10 @@
+# Only the static site is deployed: index.html, styles/, assets/, dist/.
+# Everything below stays in the GitHub repo but is not served on Vercel.
+src/
+node_modules/
+package.json
+package-lock.json
+tsconfig.json
+README.md
+*.pdf
+.gitignore
