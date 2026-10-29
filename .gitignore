@@ -1,0 +1,74 @@
+# ------------------------------------------------------------
+# Portfolio .gitignore
+# NOTE: dist/ is intentionally NOT ignored — GitHub Pages serves
+# dist/main.js directly, so it must be committed after `npm run build`.
+# ------------------------------------------------------------
+
+# Dependencies
+node_modules/
+
+# Design source (large, not needed by the site)
+Portfolio.pdf
+*.pdf
+
+# Secrets & environment files (never commit these)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+id_rsa*
+id_ed25519*
+*.secret
+secrets.*
+credentials*
+
+# Logs & debug output
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript / build caches
+*.tsbuildinfo
+.cache/
+.esbuild/
+coverage/
+
+# Source maps (would expose original sources; regenerate locally if needed)
+*.map
+
+# Editor & IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# AI assistant / tooling local folders
+.claude/
+.codex/
+.gemini/
+.kiro/
+.agents/
+.antigravity/
+
+# OS clutter
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+
+# Archives & temp files
+*.zip
+*.rar
+*.7z
+*.tmp
+*.bak

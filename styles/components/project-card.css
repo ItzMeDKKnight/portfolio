@@ -1,0 +1,154 @@
+/*
+ * "Selected work" project card.
+ * Resting: cover image with name + tags at the bottom.
+ * Hover / focus / tapped (.is-open): description, stack and links slide up.
+ */
+
+.project-card {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  cursor: pointer;
+  isolation: isolate;
+  transition:
+    border-color 0.3s var(--ease),
+    box-shadow 0.3s var(--ease),
+    transform 0.3s var(--ease);
+}
+
+.project-card:hover,
+.project-card:focus-visible,
+.project-card.is-open {
+  border-color: rgba(59, 180, 242, 0.45);
+  box-shadow: 0 18px 50px -24px var(--accent-glow);
+  transform: translateY(-3px);
+}
+
+.card-cover {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 0.8s var(--ease),
+    filter 0.5s var(--ease);
+}
+
+.project-card:hover .card-cover img,
+.project-card:focus-visible .card-cover img,
+.project-card.is-open .card-cover img {
+  transform: scale(1.06);
+  filter: blur(3px) brightness(0.45);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px 22px;
+  background: linear-gradient(to top, rgba(4, 7, 10, 0.92) 0%, rgba(4, 7, 10, 0.35) 45%, transparent 70%);
+}
+
+.card-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.card-info h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.card-tags {
+  display: flex;
+  gap: 6px;
+}
+
+/* Details drawer — collapsed by default, grows open on hover */
+.card-details {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows var(--duration) var(--ease),
+    opacity var(--duration) var(--ease);
+}
+
+.project-card:hover .card-details,
+.project-card:focus-visible .card-details,
+.project-card.is-open .card-details {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.card-details-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.card-description {
+  margin-top: 12px;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: #d3dbe1;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.card-stack {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.card-links {
+  display: flex;
+  gap: 8px;
+}
+
+.card-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(7, 11, 15, 0.6);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    color 0.2s;
+}
+
+.card-links a:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #03121c;
+}

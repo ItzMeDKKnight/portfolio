@@ -1,0 +1,31 @@
+/*
+ * Stylesheet entry point — imports every partial in cascade order.
+ *   base/        design tokens, reset, typography
+ *   components/  reusable pieces (buttons, frames, chips, cards…)
+ *   layout/      page chrome (navbar, sections, footer)
+ *   sections/    one file per page section
+ */
+
+@import url("base/variables.css");
+@import url("base/reset.css");
+@import url("base/typography.css");
+
+@import url("components/buttons.css");
+@import url("components/image-frames.css");
+@import url("components/chips.css");
+@import url("components/text-block.css");
+@import url("components/project-card.css");
+@import url("components/reveal.css");
+
+@import url("layout/container.css");
+@import url("layout/navbar.css");
+@import url("layout/section.css");
+@import url("layout/footer.css");
+
+@import url("sections/hero.css");
+@import url("sections/about.css");
+@import url("sections/work.css");
+@import url("sections/skills.css");
+@import url("sections/tools.css");
+@import url("sections/achievements.css");
+@import url("sections/contact.css");

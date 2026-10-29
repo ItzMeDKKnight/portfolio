@@ -1,0 +1,46 @@
+/* Shared section spacing and the small "Selected work"-style section header. */
+
+.section {
+  position: relative;
+  padding-block: var(--section-space);
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 30px;
+  margin-bottom: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.section-head h3 {
+  position: relative;
+  padding-left: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.section-head h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 15px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: translateY(-50%);
+}
+
+.section-link {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  transition: color 0.2s;
+}
+
+.section-link:hover {
+  color: var(--accent);
+}

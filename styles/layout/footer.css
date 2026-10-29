@@ -1,0 +1,27 @@
+/* Page footer with copyright and GitHub link. */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-block: 28px;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.85rem;
+}
+
+.footer-inner p {
+  color: var(--text-faint);
+}
+
+.footer-inner a {
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.footer-inner a:hover {
+  color: var(--accent);
+}

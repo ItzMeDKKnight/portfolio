@@ -1,0 +1,115 @@
+/* Hero: full-screen code background with the glowing "Full Stack Developer" title. */
+
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: hero-drift 24s ease-in-out infinite alternate;
+}
+
+.hero-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, rgba(7, 11, 15, 0.35) 0%, rgba(7, 11, 15, 0.8) 70%),
+    linear-gradient(to bottom, rgba(7, 11, 15, 0.2) 0%, var(--bg) 100%);
+}
+
+.hero-content {
+  padding-top: 80px;
+}
+
+.hero-name {
+  margin-bottom: 22px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+  font-size: clamp(1.9rem, 6.4vw, 5.2rem);
+  letter-spacing: 0.22em;
+  /* letter-spacing adds space after the last letter; shift back to keep it centred */
+  margin-right: -0.22em;
+}
+
+.hero-tagline {
+  margin-top: 26px;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+/* Small mouse-shaped scroll hint */
+.scroll-cue {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  width: 24px;
+  height: 38px;
+  border: 2px solid var(--line-strong);
+  border-radius: 14px;
+  transform: translateX(-50%);
+}
+
+.scroll-cue span {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  width: 4px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  animation: scroll-cue 1.8s ease-in-out infinite;
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1.12) translateX(-1.5%);
+  }
+}
+
+@keyframes scroll-cue {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+}

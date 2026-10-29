@@ -1,0 +1,51 @@
+/* Text styles: the neon glow heading, eyebrow labels and body copy. */
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* Big uppercase heading with the cyan neon glow from the design */
+.glow-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: clamp(2.1rem, 5.2vw, 4.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.35),
+    0 0 18px var(--accent-glow),
+    0 0 42px rgba(59, 180, 242, 0.45),
+    0 0 80px rgba(59, 180, 242, 0.25);
+}
+
+/* Small label next to headings, e.g. "Core hard skills" */
+.eyebrow {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.eyebrow--large {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+}
+
+/* The short cyan bar used as an accent throughout the design */
+.accent-pill {
+  display: inline-block;
+  width: 34px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 14px rgba(59, 180, 242, 0.6);
+}

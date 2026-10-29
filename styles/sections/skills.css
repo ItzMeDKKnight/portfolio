@@ -1,0 +1,104 @@
+/* Technical Skills: photo / highlights / notched photo, the heading, then grouped tech chips. */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr) minmax(0, 1.2fr);
+  grid-template-rows: auto 1fr;
+  gap: 48px clamp(28px, 4vw, 56px);
+}
+
+.skills-photo-small {
+  aspect-ratio: 1.22;
+}
+
+.skill-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 28px;
+  align-content: start;
+}
+
+.skills-photo-large {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  min-height: 420px;
+  --notch-width: 26%;
+  --notch-height: 52%;
+  --chamfer: 16%;
+  /* only the bottom-right corner is chamfered in this frame */
+  clip-path: polygon(0 0, 100% 0, 100% 84%, 84% 100%, 0 100%);
+}
+
+.skills-title {
+  grid-column: 1 / span 2;
+  align-self: end;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.skills-title .eyebrow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 32px 28px;
+  margin-top: clamp(56px, 7vw, 90px);
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.skill-group h4 {
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+@media (max-width: 1000px) {
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skill-highlights {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .skills-photo-large {
+    grid-column: 2;
+    grid-row: 1;
+    min-height: 0;
+    aspect-ratio: 1.22;
+  }
+
+  .skills-title {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid,
+  .skill-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-photo-large {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .skill-highlights,
+  .skills-title {
+    grid-row: auto;
+  }
+}

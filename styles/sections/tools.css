@@ -1,0 +1,119 @@
+/* Tools and Technologies: category rows on the left, photo collage with heading on the right. */
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(32px, 5vw, 72px);
+}
+
+.tool-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 56px;
+}
+
+.tool-row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 28px;
+}
+
+.tool-row-title {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.tool-row-title h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.tool-row-body p {
+  margin-bottom: 16px;
+  font-size: 0.93rem;
+  line-height: 1.65;
+}
+
+.tools-right {
+  display: grid;
+  grid-template-columns: 1fr 0.42fr;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+}
+
+.tools-photo-small {
+  grid-column: 2;
+  grid-row: 1;
+  aspect-ratio: 0.96;
+}
+
+.tools-photo-large {
+  grid-column: 1 / -1;
+  grid-row: 1 / span 2;
+  z-index: 0;
+  min-height: 460px;
+  margin-top: 70px;
+  --notch-width: 0%;
+  /* stepped shape: cut away top-right (where the small photo sits) and bottom-left (for the heading) */
+  clip-path: polygon(0 0, 46% 0, 46% 30%, 100% 30%, 100% 100%, 0 100%);
+}
+
+.tools-photo-large::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 11, 15, 0.85) 0%, transparent 55%);
+}
+
+.tools-heading {
+  position: absolute;
+  z-index: 2;
+  left: 28px;
+  bottom: 26px;
+  font-size: clamp(1.6rem, 3.2vw, 2.7rem);
+}
+
+/* Keep the small photo above the stepped big one */
+.tools-photo-small {
+  z-index: 1;
+}
+
+@media (max-width: 1000px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-right {
+    order: -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .tool-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .tool-row-title {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .tools-right {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-photo-small {
+    display: none;
+  }
+
+  .tools-photo-large {
+    grid-row: auto;
+    margin-top: 0;
+    min-height: 340px;
+    clip-path: none;
+  }
+}

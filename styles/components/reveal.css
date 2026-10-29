@@ -1,0 +1,17 @@
+/*
+ * Scroll-in fade animation. src/main.ts adds the "js" class to <html> and
+ * src/ui/scroll-reveal.ts adds .is-visible — without JavaScript nothing is hidden.
+ */
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s var(--ease),
+    transform 0.8s var(--ease);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}

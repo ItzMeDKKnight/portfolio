@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750">
+  <!-- Placeholder cover: arc reactor HUD -->
+  <defs>
+    <radialGradient id="bg" cx="70%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#0b2a3d"/>
+      <stop offset="0.6" stop-color="#06121b"/>
+      <stop offset="1" stop-color="#03070b"/>
+    </radialGradient>
+    <radialGradient id="core" r="50%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.35" stop-color="#9be7ff"/>
+      <stop offset="1" stop-color="#3bb4f2" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#3bb4f2" stroke-opacity="0.07"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <rect width="1200" height="750" fill="url(#grid)"/>
+  <g transform="translate(830 360)" fill="none" stroke="#56d4f5" filter="url(#glow)">
+    <circle r="250" stroke-opacity="0.18" stroke-width="2"/>
+    <circle r="210" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="6 14"/>
+    <circle r="170" stroke-opacity="0.8" stroke-width="10" stroke-dasharray="70 22"/>
+    <circle r="125" stroke-opacity="0.5" stroke-width="3"/>
+    <circle r="95" stroke-opacity="0.9" stroke-width="16" stroke-dasharray="26 12"/>
+    <path d="M0-60 52 30H-52z" stroke-width="6" stroke-opacity="0.95"/>
+    <circle r="58" fill="url(#core)" stroke="none"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#e9f8ff">
+    <text x="80" y="300" font-size="92" font-weight="700" letter-spacing="14">J.A.R.V.I.S.</text>
+    <text x="84" y="356" font-size="26" fill="#7fd4f7" letter-spacing="6">BILINGUAL AI VOICE ASSISTANT</text>
+    <g font-size="20" fill="#9fb8c6" letter-spacing="2">
+      <text x="84" y="440">&gt; "Hey Jarvis, open VS Code"</text>
+      <text x="84" y="476">&gt; "Kal ka weather batao"</text>
+    </g>
+    <rect x="84" y="510" width="64" height="9" rx="4.5" fill="#3bb4f2"/>
+  </g>
+</svg>

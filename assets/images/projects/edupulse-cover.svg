@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750">
+  <!-- Placeholder cover: dashboard with pulse line -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071a14"/>
+      <stop offset="0.6" stop-color="#06100f"/>
+      <stop offset="1" stop-color="#04080a"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#34d399" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <g transform="translate(660 140)">
+    <rect width="460" height="470" rx="24" fill="#0c1a18" stroke="#1d3a33" stroke-width="2"/>
+    <circle cx="40" cy="38" r="7" fill="#1d3a33"/><circle cx="62" cy="38" r="7" fill="#1d3a33"/><circle cx="84" cy="38" r="7" fill="#1d3a33"/>
+    <!-- stat tiles -->
+    <rect x="30" y="74" width="190" height="96" rx="14" fill="#11241f"/>
+    <text x="52" y="112" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#7fb8a5">Attendance</text>
+    <text x="52" y="150" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#e9fff6">94%</text>
+    <rect x="240" y="74" width="190" height="96" rx="14" fill="#11241f"/>
+    <text x="262" y="112" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#7fb8a5">Avg. grade</text>
+    <text x="262" y="150" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#e9fff6">A−</text>
+    <!-- chart -->
+    <rect x="30" y="190" width="400" height="250" rx="14" fill="#11241f"/>
+    <path d="M50 380 L110 360 L150 372 L200 300 L240 330 L290 250 L330 280 L380 230 L410 240 V420 H50Z" fill="url(#area)"/>
+    <path d="M50 380 L110 360 L150 372 L200 300 L240 330 L290 250 L330 280 L380 230 L410 240" fill="none" stroke="#34d399" stroke-width="5" stroke-linejoin="round" filter="url(#glow)"/>
+    <circle cx="380" cy="230" r="8" fill="#e9fff6"/>
+  </g>
+  <!-- pulse line -->
+  <path d="M0 640 H260 L290 600 L320 690 L350 560 L380 660 L405 640 H1200" fill="none" stroke="#34d399" stroke-opacity="0.45" stroke-width="3"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="80" y="300" font-size="92" font-weight="700" fill="#fff">Edu<tspan fill="#34d399">Pulse</tspan></text>
+    <text x="84" y="356" font-size="26" fill="#8fe3c2" letter-spacing="6">PARENT · STUDENT · TEACHER</text>
+    <g font-size="20" fill="#9fb9b0" letter-spacing="1">
+      <text x="84" y="440">AI progress reports for universities</text>
+    </g>
+    <rect x="84" y="474" width="64" height="9" rx="4.5" fill="#34d399"/>
+  </g>
+</svg>

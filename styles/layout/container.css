@@ -1,0 +1,8 @@
+/* Centered, max-width content wrapper used by every section. */
+
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}

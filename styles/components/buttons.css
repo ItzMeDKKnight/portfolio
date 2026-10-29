@@ -1,0 +1,81 @@
+/* Buttons: primary/ghost call-to-actions and the outlined arrow button from the design. */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease),
+    background 0.25s var(--ease),
+    border-color 0.25s var(--ease);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button--primary {
+  background: var(--accent);
+  color: #03121c;
+  box-shadow: 0 0 24px -4px var(--accent-glow);
+}
+
+.button--primary:hover {
+  box-shadow: 0 0 36px -2px var(--accent-glow);
+}
+
+.button--ghost {
+  border: 1.5px solid var(--line-strong);
+  color: var(--text);
+}
+
+.button--ghost:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* Outlined pill with a right arrow (→) */
+.arrow-button {
+  display: inline-block;
+  flex: none;
+  width: 60px;
+  height: 34px;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 16' fill='none' stroke='%233bb4f2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8h33M29 2l7 6-7 6'/%3E%3C/svg%3E")
+    center / 34px 14px no-repeat;
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease),
+    background-color 0.25s var(--ease);
+}
+
+.arrow-button:hover {
+  transform: translateX(4px);
+  background-color: var(--accent-soft);
+  box-shadow: 0 0 22px -4px var(--accent-glow);
+}
+
+/* "+ N more projects" toggle below the work grid */
+.show-more {
+  display: block;
+  margin: 28px auto 0;
+  padding: 11px 22px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.show-more:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}

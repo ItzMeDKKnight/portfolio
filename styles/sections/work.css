@@ -1,0 +1,43 @@
+/* My Work: intro (photo + heading) followed by the "Selected work" project grid. */
+
+.work-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: end;
+  margin-bottom: clamp(56px, 7vw, 90px);
+}
+
+.work-photo {
+  aspect-ratio: 1.1;
+}
+
+.work-intro-text .accent-pill {
+  margin: 24px 0 20px;
+}
+
+.work-intro-text p {
+  max-width: 460px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 860px) {
+  .work-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .work-photo {
+    aspect-ratio: 16 / 10;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+}

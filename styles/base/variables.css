@@ -1,0 +1,32 @@
+/* Design tokens: colours, fonts, spacing and radii used across the site. */
+
+:root {
+  /* Colours */
+  --bg: #070b0f;
+  --surface: #0c1218;
+  --surface-raised: #111a22;
+  --line: #17212b;
+  --line-strong: #243341;
+  --text: #f2f6f9;
+  --text-muted: #a7b3bd;
+  --text-faint: #6d7a85;
+  --accent: #3bb4f2;
+  --accent-soft: rgba(59, 180, 242, 0.14);
+  --accent-glow: rgba(59, 180, 242, 0.75);
+
+  /* Fonts */
+  --font-display: "Syncopate", "Arial Black", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Sizing */
+  --container: 1280px;
+  --gutter: clamp(20px, 5vw, 80px);
+  --section-space: clamp(80px, 11vw, 150px);
+  --radius: 22px;
+  --radius-small: 12px;
+  --notch: 34px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 0.45s;
+}

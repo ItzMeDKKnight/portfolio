@@ -1,0 +1,97 @@
+/* Tags and technology chips/icons. */
+
+/* Text tag on project cards */
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(7, 11, 15, 0.55);
+  backdrop-filter: blur(6px);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Logo + label pill in the skills and tools sections */
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px 7px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+
+/* Light tile behind each logo so dark logos (GitHub, Vercel…) stay visible */
+.tech-chip img {
+  width: 24px;
+  height: 24px;
+  padding: 3px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.92);
+  object-fit: contain;
+}
+
+.tech-chip:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 18px -6px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Small logo tile on project cards, with a tooltip */
+.tech-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.tech-icon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.tech-icon::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #000;
+  border: 1px solid var(--line-strong);
+  font-size: 0.7rem;
+  white-space: nowrap;
+  color: var(--text);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.15s,
+    transform 0.15s;
+}
+
+.tech-icon:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

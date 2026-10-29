@@ -1,0 +1,13 @@
+/* Title + paragraph block used in the skills section. */
+
+.text-block h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.text-block p {
+  font-size: 0.93rem;
+  line-height: 1.65;
+}
