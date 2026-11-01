@@ -16,6 +16,7 @@
 @import url("components/text-block.css");
 @import url("components/project-card.css");
 @import url("components/reveal.css");
+@import url("components/resume-viewer.css");
 
 @import url("layout/container.css");
 @import url("layout/navbar.css");
@@ -28,4 +29,5 @@
 @import url("sections/skills.css");
 @import url("sections/tools.css");
 @import url("sections/achievements.css");
+@import url("sections/resume.css");
 @import url("sections/contact.css");

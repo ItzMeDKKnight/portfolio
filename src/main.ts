@@ -8,6 +8,7 @@ import { renderSkillsSection } from "./sections/skills-section";
 import { renderToolsSection } from "./sections/tools-section";
 import { renderWorkSection } from "./sections/work-section";
 import { initNavbar } from "./ui/navbar";
+import { initResumeViewer } from "./ui/resume-viewer";
 import { initScrollReveal } from "./ui/scroll-reveal";
 
 function start(): void {
@@ -21,6 +22,7 @@ function start(): void {
 
   initNavbar();
   initScrollReveal();
+  initResumeViewer();
 }
 
 if (document.readyState === "loading") {

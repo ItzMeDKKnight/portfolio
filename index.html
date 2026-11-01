@@ -32,6 +32,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#resume">Resume</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
 
@@ -154,6 +155,59 @@
         </div>
       </section>
 
+      <!-- ============ RESUME ============ -->
+      <section class="section resume" id="resume">
+        <div class="container resume-grid">
+          <div class="resume-text reveal">
+            <p class="eyebrow">The one-page version <span class="accent-pill"></span></p>
+            <h2 class="glow-heading resume-heading">Resume</h2>
+            <p class="resume-note">
+              Everything on this site, condensed onto a single page: projects, hackathons, leadership and skills.
+              Read it right here or take a copy with you.
+            </p>
+            <ul class="resume-facts">
+              <li><strong>BTech CSE</strong><span>OIST Bhopal · 2029</span></li>
+              <li><strong>8.19</strong><span>CGPA, 1st semester</span></li>
+              <li><strong>2×</strong><span>Hackathon finalist</span></li>
+            </ul>
+            <div class="resume-actions">
+              <a class="button button--primary" href="assets/resume/ansh-mutatkar-resume.pdf" target="_blank" rel="noopener" data-resume-open>
+                View resume
+              </a>
+              <a class="button button--ghost" href="assets/resume/ansh-mutatkar-resume.pdf" download="Ansh-Mutatkar-Resume.pdf">
+                Download PDF
+              </a>
+            </div>
+          </div>
+
+          <!-- Stylised preview of the PDF: a sheet of paper floating in the glow -->
+          <div class="resume-stage reveal">
+            <a class="resume-sheet" href="assets/resume/ansh-mutatkar-resume.pdf" target="_blank" rel="noopener" data-resume-open aria-label="Open resume preview">
+              <span class="sheet-header">
+                <span class="sheet-name">Ansh Anand Mutatkar</span>
+                <span class="sheet-sub">BTech CSE · Bhopal, India</span>
+              </span>
+              <span class="sheet-body" aria-hidden="true">
+                <span class="sheet-title">Summary</span>
+                <span class="sheet-line"></span><span class="sheet-line"></span><span class="sheet-line sheet-line--short"></span>
+                <span class="sheet-title">Projects</span>
+                <span class="sheet-row"><b>JARVIS</b><i></i></span>
+                <span class="sheet-line"></span><span class="sheet-line sheet-line--mid"></span>
+                <span class="sheet-row"><b>Label Saathi</b><i></i></span>
+                <span class="sheet-line"></span>
+                <span class="sheet-row"><b>InTabPDF</b><i></i></span>
+                <span class="sheet-line"></span><span class="sheet-line sheet-line--short"></span>
+                <span class="sheet-title">Achievements</span>
+                <span class="sheet-cols"><span class="sheet-line"></span><span class="sheet-line"></span><span class="sheet-line sheet-line--mid"></span><span class="sheet-line sheet-line--mid"></span></span>
+                <span class="sheet-title">Skills</span>
+                <span class="sheet-line sheet-line--mid"></span><span class="sheet-line sheet-line--short"></span>
+              </span>
+              <span class="sheet-badge">Open ↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <!-- ============ CONTACT / GET IN TOUCH ============ -->
       <section class="section contact" id="contact">
         <div class="container contact-grid">
@@ -197,5 +251,20 @@
         <a data-profile="github" href="#" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       </div>
     </footer>
+
+    <!-- ============ RESUME VIEWER (opened by [data-resume-open]) ============ -->
+    <dialog class="resume-viewer" aria-labelledby="resume-viewer-title">
+      <div class="viewer-bar">
+        <p class="viewer-title" id="resume-viewer-title"><span class="accent-pill"></span> Resume</p>
+        <div class="viewer-actions">
+          <a class="viewer-link" href="assets/resume/ansh-mutatkar-resume.pdf" target="_blank" rel="noopener">New tab ↗</a>
+          <a class="viewer-link" href="assets/resume/ansh-mutatkar-resume.pdf" download="Ansh-Mutatkar-Resume.pdf">Download</a>
+          <button class="viewer-close" type="button" aria-label="Close resume" data-resume-close></button>
+        </div>
+      </div>
+      <div class="viewer-body">
+        <iframe title="Resume of Ansh Anand Mutatkar" data-src="assets/resume/ansh-mutatkar-resume.pdf#view=FitH"></iframe>
+      </div>
+    </dialog>
   </body>
 </html>

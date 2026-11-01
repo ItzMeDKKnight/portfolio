@@ -1,0 +1,142 @@
+/* Full-screen resume viewer: a native <dialog> with a slim toolbar above the embedded PDF. */
+
+.resume-viewer {
+  width: min(960px, calc(100vw - 32px));
+  height: min(1100px, calc(100dvh - 32px));
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 0 80px -20px var(--accent-glow);
+  overflow: hidden;
+}
+
+.resume-viewer[open] {
+  display: flex;
+  flex-direction: column;
+  animation: viewer-in 0.45s var(--ease);
+}
+
+.resume-viewer::backdrop {
+  background: rgba(3, 6, 9, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+@keyframes viewer-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+}
+
+/* Stop the page behind from scrolling while the viewer is open */
+.is-viewer-open,
+.is-viewer-open body {
+  overflow: hidden;
+}
+
+.viewer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px 12px 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.viewer-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.viewer-title .accent-pill {
+  width: 22px;
+  height: 5px;
+}
+
+.viewer-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.viewer-link {
+  padding: 7px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  transition:
+    color 0.2s,
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.viewer-link:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* Round × button */
+.viewer-close {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  transition:
+    border-color 0.2s,
+    transform 0.3s var(--ease);
+}
+
+.viewer-close::before,
+.viewer-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.viewer-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.viewer-close:hover {
+  border-color: var(--accent);
+  transform: rotate(90deg);
+}
+
+.viewer-body {
+  flex: 1;
+  background: #1b232c;
+}
+
+.viewer-body iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 520px) {
+  .viewer-link:first-child {
+    display: none;
+  }
+}

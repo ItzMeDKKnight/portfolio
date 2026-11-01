@@ -7,4 +7,5 @@ package-lock.json
 tsconfig.json
 README.md
 *.pdf
+!assets/resume/*.pdf
 .gitignore

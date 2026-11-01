@@ -368,6 +368,31 @@
     sections.forEach((section) => observer.observe(section));
   }
 
+  // src/ui/resume-viewer.ts
+  function initResumeViewer() {
+    const dialog = mustFind(".resume-viewer");
+    const frame = mustFind("iframe", dialog);
+    const triggers = document.querySelectorAll("[data-resume-open]");
+    const canShowInline = typeof dialog.showModal === "function" && navigator.pdfViewerEnabled === true;
+    if (!canShowInline) return;
+    const open = () => {
+      if (!frame.src) frame.src = frame.dataset.src ?? "";
+      dialog.showModal();
+      document.documentElement.classList.add("is-viewer-open");
+    };
+    triggers.forEach(
+      (trigger) => trigger.addEventListener("click", (event) => {
+        event.preventDefault();
+        open();
+      })
+    );
+    mustFind("[data-resume-close]", dialog).addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener("close", () => document.documentElement.classList.remove("is-viewer-open"));
+  }
+
   // src/ui/scroll-reveal.ts
   function initScrollReveal() {
     const targets = document.querySelectorAll(".reveal");
@@ -398,6 +423,7 @@
     renderAchievementsSection();
     initNavbar();
     initScrollReveal();
+    initResumeViewer();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", start);

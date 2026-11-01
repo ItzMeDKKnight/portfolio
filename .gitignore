@@ -10,6 +10,8 @@ node_modules/
 # Design source (large, not needed by the site)
 Portfolio.pdf
 *.pdf
+# …except the resume the site links to
+!assets/resume/*.pdf
 
 # Secrets & environment files (never commit these)
 .env

@@ -39,19 +39,21 @@ Portfolio/
 │   │   └── achievements-section.ts
 │   ├── ui/                     Page behaviours
 │   │   ├── navbar.ts           Mobile menu, active link, scrolled state
+│   │   ├── resume-viewer.ts    Opens the resume PDF in a pop-up viewer
 │   │   └── scroll-reveal.ts    Fade-in on scroll
 │   └── utils/dom.ts            Element-creation helpers
 │
 ├── styles/                     CSS (main.css imports everything in order)
 │   ├── main.css
 │   ├── base/                   variables (colours, fonts) · reset · typography
-│   ├── components/             buttons · image-frames · chips · text-block · project-card · reveal
+│   ├── components/             buttons · image-frames · chips · text-block · project-card · reveal · resume-viewer
 │   ├── layout/                 container · navbar · section · footer
-│   └── sections/               hero · about · work · skills · tools · achievements · contact
+│   └── sections/               hero · about · work · skills · tools · achievements · resume · contact
 │
 ├── assets/
 │   ├── images/photos/          Section photos (named <section>-<subject>.jpg)
 │   ├── images/projects/        Project cover images (placeholders for now)
+│   ├── resume/                 ansh-mutatkar-resume.pdf (the only PDF that is committed/deployed)
 │   └── icons/                  Favicon and logos not on the devicon CDN
 │
 ├── dist/main.js                Built output — generated, don't edit by hand
@@ -67,6 +69,7 @@ Portfolio/
 | Replace a project cover            | Drop an image in `assets/images/projects/`, update `cover`  |
 | Add a skill or tool                | `src/data/skills.ts` / `src/data/tools.ts` (new logo → `tech-icons.ts`) |
 | Add an achievement                 | `src/data/achievements.ts`                                  |
+| Update my resume                   | Replace `assets/resume/ansh-mutatkar-resume.pdf` (same name) |
 | Change colours or fonts            | `styles/base/variables.css`                                 |
 | Restyle one section                | `styles/sections/<section>.css`                             |
 
